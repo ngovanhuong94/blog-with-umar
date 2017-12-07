@@ -1,9 +1,12 @@
-var express = require('express')
+const express = require('express')
+const bodyParser = require('body-parser');
+const apiRoutes = require('./api/routes/index');
 
 
 
-var app = express()
-
+const app = express()
+app.use(bodyParser.json());
+app.use('/api', apiRoutes);
 app.get('/', (req,res) => {
 	res.send({
 		test: "OK"
