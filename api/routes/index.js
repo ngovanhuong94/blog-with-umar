@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const ctrlUser = require('../controllers/UserController');
 
-router.get('/', (req, res)=> {
-  res.send('WORKING');
-});
+router.get('/', ctrlUser.index);
 
 
 
