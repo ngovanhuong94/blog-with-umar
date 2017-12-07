@@ -1,14 +1,10 @@
-var express = require('express')
-
+var express  =      require('express');
+var path     =      require('path');
 
 
 var app = express()
 
-app.get('/', (req,res) => {
-	res.send({
-		test: "OK"
-	})
-})
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.listen(process.env.PORT || 3000, () => console.log("Server is running"))

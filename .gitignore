@@ -1,7 +1,1 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# Ignore everything in this directory
-*
-# Except this file
-!.gitignore
-
+/node_modules
