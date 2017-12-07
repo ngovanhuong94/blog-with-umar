@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html ng-app="MyApp">
+<head>
         
-    </head>
-    <body>
-        <h1>This is homepage</h1>
-    </body>
+</head>
+<body>
+   <div ng-view></div>
+<!-- file setup angular-->
+<script type="text/javascript" src="vendor/angular.js"></script>
+<script type="text/javascript" src="vendor/angular-route.js"></script>
+<script type="text/javascript" src="vendor/angular-cookies.js"></script>
+<script type="text/javascript" src="vendor/angular-resource.js"></script>
+<script type="text/javascript" src="vendor/angular-strap.js"></script>
+<script type="text/javascript" src="vendor/angular-strap.tpl.js"></script>
+<script type="text/javascript" src="vendor/angular-messages.js"></script>
+<!-- this file help to work with date and time-->
+<script type="text/javascript" src="vendor/moment.min.js"></script>
+
+<!-- setup module angular -->
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="controllers/main.js"></script>
+</body>
 </html>
