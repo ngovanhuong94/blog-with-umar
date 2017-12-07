@@ -1,3 +1,4 @@
+
 // This is for storing enviroment variables
 require('dotenv').config();
 const express = require('express')
@@ -11,11 +12,11 @@ require('./api/models/db');
 const apiRoutes = require('./api/routes/index');
 
 
-
 const app = express()
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use('/api', apiRoutes);
+
 
 
 
