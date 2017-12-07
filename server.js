@@ -1,10 +1,25 @@
-var express  =      require('express');
-var path     =      require('path');
+
+// This is for storing enviroment variables
+require('dotenv').config();
+const express = require('express')
+const bodyParser = require('body-parser');
+// This is for logging requests made to the server
+const logger = require('morgan');
+
+//require the database connection file 
+require('./api/models/db');
+// this is our api routes
+const apiRoutes = require('./api/routes/index');
 
 
-var app = express()
+const app = express()
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use('/api', apiRoutes);
 
-app.use(express.static(path.join(__dirname, 'public')))
 
 
-app.listen(process.env.PORT || 3000, () => console.log("Server is running"))
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`API SERVER AT http://localhost:${process.env.PORT || 3000}/api/`);
+})
