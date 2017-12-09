@@ -29,3 +29,5 @@ app.use('*', function(req,res) {
 app.listen(process.env.PORT || 8080, () => {
   console.log(`API SERVER AT http://localhost:${process.env.PORT || 3000}/api/`);
 })
+
+module.exports = app;
