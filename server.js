@@ -4,26 +4,37 @@ require('dotenv').config();
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
 // This is for logging requests made to the server
 const logger = require('morgan');
 
 //require the database connection file 
-require('./api/models/db');
-// this is our api routes
-const apiRoutes = require('./api/routes/index');
+const DBURI = process.env.DBURI;
+
+mongoose.connect(DBURI);
+mongoose.connection.on('connected', ()=> {
+  console.log('Connected to ', DBURI);
+
+});
+
+mongoose.connection.on('error', (error)=> {
+  console.error(error);
+});
+
+
+mongoose.connection.on('disconnected', ()=> {
+  console.log('Disconnected from ', DBURI);
+})
 
 
 const app = express()
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use('/api', apiRoutes);
 // setup static files
 app.use(express.static(path.join(__dirname, 'public')))
 
-// redirect to angular routes
-app.use('*', function(req,res) {
-    res.redirect('/#'+req.originalUrl)
-})
+require('./routes')(app)
 
 
 app.listen(process.env.PORT || 8080, () => {

@@ -24,7 +24,7 @@ mongoose.connection.on('disconnected', ()=> {
 })
 
 //user model
-var User = require('../api/models/User')
+var User = require('../api/user/user.model')
 //user default data
 var usersData = require('./users.json')
 
@@ -32,17 +32,18 @@ var usersData = require('./users.json')
 User.remove({}, function (err) {
 	if (err) throw err;
 	console.log("deleted all users in database")
-})
-// add default users to database
-usersData.forEach(data => {
-	var user = new User({
-		email: data.email,
-		password: data.password,
-		name: data.name
-	})
 
-	user.save(function (err) {
-		if (err) throw err;
-		console.log("Added a user to database")
+	// add default users to database
+	usersData.forEach(data => {
+		var user = new User({
+			email: data.email,
+			password: data.password,
+			name: data.name
+		})
+
+		user.save(function (err) {
+			if (err) throw err;
+			console.log("Added a user to database")
+		})
 	})
 })
