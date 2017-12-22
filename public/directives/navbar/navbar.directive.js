@@ -5,4 +5,4 @@ angular.module('MyApp')
 		templateUrl: 'directives/navbar/navbar.html',
 		controller: 'NavbarCtrl'
 	}
-})
+});
