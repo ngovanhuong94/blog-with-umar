@@ -2,43 +2,42 @@
 <html ng-app="MyApp">
 <head>
     <base href="/">
-     <link href="static/stylesheets/bootstrap.min.css" rel="stylesheet">
+     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="static/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="stylesheets/blog.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="static/stylesheets/sb-admin.css" rel="stylesheet">
 </head>
 <body>
    <div ui-view></div>
 <!-- file setup angular-->
-<script type="text/javascript" src="static/javascript/angular/angular.js"></script>
-<script type="text/javascript" src="static/javascript/angular/angular-ui-router.js"></script>
-<script type="text/javascript" src="static/javascript/angular/angular-cookies.js"></script>
-<script type="text/javascript" src="static/javascript/angular/angular-resource.js"></script>
-<script type="text/javascript" src="static/javascript/angular/angular-strap.js"></script>
-<script type="text/javascript" src="static/javascript/angular/angular-strap.tpl.js"></script>
-<script type="text/javascript" src="static/javascript/angular/angular-messages.js"></script>
+<script type="text/javascript" src="vendor/angular.js"></script>
+<script type="text/javascript" src="vendor/angular-ui-router.js"></script>
+<script type="text/javascript" src="vendor/angular-cookies.js"></script>
+<script type="text/javascript" src="vendor/angular-resource.js"></script>
+<script type="text/javascript" src="vendor/angular-strap.js"></script>
+<script type="text/javascript" src="vendor/angular-strap.tpl.js"></script>
+<script type="text/javascript" src="vendor/angular-messages.js"></script>
 <!-- this file help to work with date and time-->
-<script type="text/javascript" src="static/javascript/angular/moment.min.js"></script>
+<script type="text/javascript" src="vendor/moment.min.js"></script>
 
 <!-- setup module angular -->
 <script type="text/javascript" src="app.js"></script>
 
-<!-- setup main app -->
-<script type="text/javascript" src="app/main/main.js"></script>
-<script type="text/javascript" src="app/main/main.controller.js"></script>
+<!-- controllers -->
+<script src="controllers/main.js"></script>
+<script src="controllers/login.js"></script>
+<script src="controllers/register.js"></script>
+<script src="controllers/detail.js"></script>
 
-<!-- setup account app -->
-<script type="text/javascript" src="app/account/account.js"></script>
-<script type="text/javascript" src="app/account/login/login.controller.js"></script>
+<!-- directive -->
+<script src="directives/navbar/navbar.directive.js"></script>
+<script src="directives/navbar/navbar.controller.js"></script>
+
+<script src="directives/footer/footer.directive.js"></script>
 
 
-
-
-
-  <script src="static/javascript/jquery.min.js"></script>
-  <script src="static/javascript/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="static/javascript/jquery.easing.min.js"></script>
+  <script src="javascript/jquery.min.js"></script>
+  <script src="javascript/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -14,8 +14,10 @@ var bcrypt = require('bcryptjs')
 
 
 var UserSchema = new mongoose.Schema({
-	name: {
-		type: String
+	username: {
+		type: String,
+		required: true,
+		trim: true
 	},
 	email: {
 		type: String,
@@ -24,7 +26,13 @@ var UserSchema = new mongoose.Schema({
 	},
 	password: {
 		type: String
-	}
+	},
+	blogs: [
+	  {
+	  	type: mongoose.Schema.ObjectId,
+	  	ref: 'Blog'
+	  }
+	]
 })
 
 UserSchema.pre('save', function (next) {

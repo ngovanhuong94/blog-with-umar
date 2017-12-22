@@ -38,7 +38,7 @@ User.remove({}, function (err) {
 		var user = new User({
 			email: data.email,
 			password: data.password,
-			name: data.name
+			username: data.username
 		})
 
 		user.save(function (err) {
