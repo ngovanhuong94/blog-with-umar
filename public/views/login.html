@@ -6,14 +6,14 @@
 			<h2 class="page-header">Login Page</h2>
 			<br />
 			<br />
-			<form action="">
+			<form ng-submit="login()">
 			  <div class="form-group">
 			    <label for="email">Email address:</label>
-			    <input type="email" class="form-control" id="email">
+			    <input type="email" class="form-control" ng-model='email' id="email">
 			  </div>
 			  <div class="form-group">
 			    <label for="pwd">Password:</label>
-			    <input type="password" class="form-control" id="pwd">
+			    <input type="password" class="form-control" ng-model="password" id="pwd">
 			  </div>
 			  <button type="submit" class="btn btn-default">Submit</button>
 			</form>

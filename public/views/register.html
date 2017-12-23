@@ -6,24 +6,46 @@
 			<h2 class="page-header">Register Page</h2>
 			<br />
 			<br />
-			<form action="">
+			<form name="signupForm">
+				<div class="form-group">
+					<label>Email:</label>
+					<div 
+	               ng-class="{ 'has-success' : signupForm.email.$valid && signupForm.email.$dirty, 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+
+		            <input class="form-control" type="email" id="email"
+		                   name="email" ng-model="email" required
+		                   autofocus>
+
+		            <div class="help-block text-danger" ng-if="signupForm.email.$dirty"
+		                 ng-messages="signupForm.email.$error">
+		              <div ng-message="required">Your email address is required.</div>
+		              <div ng-message="email">Your email address is invalid.</div>
+		            </div>
+		          </div>
+				</div>
+			  
 			  <div class="form-group">
-			    <label for="email">Email address:</label>
-			    <input type="email" class="form-control" id="email">
+				  	<label>Username: </label>
+				  	<div ng-class="{ 'has-success': signupForm.username.$valid && signupForm.username.$dirty , 'has-error': signupForm.username.$invalid && signupForm.username.$dirty }">
+
+				    <input type="text" name="username" class="form-control" ng-model="username" placeholder="Username" required id="username">
+				    <div class="help-block text-danger" ng-if="signupForm.username.$dirty" ng-messages="signupForm.username.$error">
+				    	<div ng-message="required">Your username is required</div>
+				    </div>
+				  </div>
 			  </div>
+
 			  <div class="form-group">
-			    <label for="firstname">First Name:</label>
-			    <input type="firstname" class="form-control" id="firstname">
+			  	<label>Password: </label>
+				  	<div class="form-group" ng-class="{ 'has-success': signupForm.password.$valid && signupForm.password.$dirty, 'has-error': signupForm.password.$invalid && signupForm.password.$dirty}">
+				  	<input type="password" name="password" class="form-control" ng-model="password" id="password" required placeholder="Password">
+				  	<div class="help-block text-danger" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
+				  		<div ng-message="required">Your password is required</div>
+				  	</div>
+				  </div>
 			  </div>
-			  <div class="form-group">
-			    <label for="lastname">Last Name:</label>
-			    <input type="lastname" class="form-control" id="lastname">
-			  </div>
-			  <div class="form-group">
-			    <label for="pwd">Password:</label>
-			    <input type="password" class="form-control" id="pwd">
-			  </div>
-			  <button type="submit" class="btn btn-default">Submit</button>
+			  
+			  <button type="button" ng-click="register()" class="btn btn-default">Submit</button>
 			</form>
 		</div>
 	</div>
